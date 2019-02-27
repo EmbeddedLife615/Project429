@@ -1,0 +1,1 @@
+copy Objects\Template.hex .\output.hex
