@@ -17,8 +17,6 @@
 #ifndef _FML_H_
 #define _FML_H_
 
-/* 定义 Function Module Layer 版本号 */
-#define __FML_VERSION		"1.0"
 
 /* 这个宏仅用于调试阶段排错 */
 #define BSP_Printf		printf
@@ -30,8 +28,10 @@
 #include "fml_tick.h"
 
 /* 提供给其他C文件调用的函数 */
+extern uint32_t FML_GetVersion(void);
+extern void FML_PrintfLogo(void);
 extern void FML_Init(void);
-
+extern void FML_Idle(void);
 
 #endif
 

@@ -15,6 +15,18 @@
 
 #include "bsp.h"
 
+ /**
+  * @brief STM32F429 APOLLO BSP Driver version number V1.0.0
+  */
+#define __STM32F429_BSP_VERSION_MAIN   (0x01) /*!< [31:24] main version */
+#define __STM32F429_BSP_VERSION_SUB1   (0x00) /*!< [23:16] sub1 version */
+#define __STM32F429_BSP_VERSION_SUB2   (0x00) /*!< [15:8]  sub2 version */
+#define __STM32F429_BSP_VERSION_RC     (0x00) /*!< [7:0]  release candidate */ 
+#define __STM32F429_BSP_VERSION        ((__STM32F429_BSP_VERSION_MAIN << 24)\
+                                             |(__STM32F429_BSP_VERSION_SUB1 << 16)\
+                                             |(__STM32F429_BSP_VERSION_SUB2 << 8 )\
+                                             |(__STM32F429_BSP_VERSION_RC)) 
+											 
 /**
   * @brief  This method returns the STM32F429 APOLLO BSP Driver revision
   * @retval version: 0xXYZR (8bits for each decimal, R for RC)
@@ -24,6 +36,16 @@ uint32_t BSP_GetVersion(void)
   return __STM32F429_BSP_VERSION;
 }
 
+void BSP_PrintfLogo(void)
+{
+	uint32_t HAL_Version;
+	HAL_Version = HAL_GetHalVersion();
+	printf("* HAL版本 : V%d.%d.%d (STM32F4xx HAL driver version )\r\n", (HAL_Version>>24)&0xff,
+			(HAL_Version>>16)&0xff,(HAL_Version>>8)&0xff);
+	printf("* BSP版本 : V%d.%d.%d (STM32F429-Apollo BSP version )\r\n", __STM32F429_BSP_VERSION_MAIN,
+			__STM32F429_BSP_VERSION_SUB1,__STM32F429_BSP_VERSION_SUB2);	
+	
+}
 
 
 /*
@@ -55,16 +77,17 @@ void BSP_Init(void)
 	HAL_Init();
 	/* Configure the System clock to 180 MHz */
 	SystemClock_Config();
-
 	
+	HAL_Delay(10);				/*初始化延时，等待时钟稳定*/
 //	SystemCoreClockUpdate();	/* 根据PLL配置更新系统时钟频率变量 SystemCoreClock */
 	/* 优先级分组设置为4 */
 //	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
 	BSP_LED_Init();		/* 配置LED */
 //	BSP_GPIO_Init();	/* 配置输入输出端口 */
-//	bsp_InitUart(); 	/* 初始化串口 */
+	BSP_UART_Init();	/* 初始化串口 */
 //	bsp_InitKey();		/* 初始化按键 */
 //	bsp_InitTimer();	/* 初始化系统滴答定时器 (此函数会开 systick 中断, tim2-5中断) */
+	printf("Hardware Abstraction Layer init completed!\r\n");
 }
 
 /*
@@ -103,7 +126,7 @@ void BSP_RunPer1ms(void)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-//extern void SaveScreenToBmp(uint16_t _index);
+
 void BSP_Idle(void)
 {
 	/* --- 喂狗 */

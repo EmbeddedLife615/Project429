@@ -186,7 +186,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -464,6 +464,11 @@
               <FilePath>..\..\Drivers\BSP\STM32F429-Apollo\src\bsp.c</FilePath>
             </File>
             <File>
+              <FileName>bsp_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\BSP\STM32F429-Apollo\src\bsp_gpio.c</FilePath>
+            </File>
+            <File>
               <FileName>bsp_led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\BSP\STM32F429-Apollo\src\bsp_led.c</FilePath>
@@ -477,6 +482,11 @@
               <FileName>bsp_tick.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\BSP\STM32F429-Apollo\src\bsp_tick.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\BSP\STM32F429-Apollo\src\bsp_uart.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -514,14 +524,14 @@
               <FilePath>..\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_hal_rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_hal_wwdg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_wwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_hal_gpio.c</FileName>
@@ -542,6 +552,11 @@
               <FileName>stm32f4xx_hal_dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c</FilePath>
             </File>
           </Files>
         </Group>

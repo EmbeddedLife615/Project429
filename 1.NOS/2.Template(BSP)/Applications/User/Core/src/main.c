@@ -35,7 +35,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "app.h"
+#include <stdio.h>
 
+void send_data(void );
 /**
   * @brief  Main program
   * @param  None
@@ -44,7 +46,8 @@
 int main(void)
 {
 	APP_Init();
-
+	APP_PrintfLogo();
+	
 	/* Infinite loop */
 	while (1)
 	{

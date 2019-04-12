@@ -13,18 +13,20 @@
 ".\objects\bsp_led.o"
 ".\objects\bsp_sysclk.o"
 ".\objects\bsp_tick.o"
+".\objects\bsp_uart.o"
 ".\objects\system_stm32f4xx.o"
 ".\objects\stm32f4xx_hal.o"
 ".\objects\stm32f4xx_hal_cortex.o"
 ".\objects\stm32f4xx_hal_pwr.o"
 ".\objects\stm32f4xx_hal_pwr_ex.o"
-".\objects\stm32f4xx_hal_rcc.o"
 ".\objects\stm32f4xx_hal_wwdg.o"
+".\objects\stm32f4xx_hal_rcc.o"
 ".\objects\stm32f4xx_hal_gpio.o"
 ".\objects\stm32f4xx_hal_uart.o"
 ".\objects\stm32f4xx_hal_usart.o"
 ".\objects\stm32f4xx_hal_dma.o"
---strict --scatter ".\Objects\Template.sct"
+".\objects\stm32f4xx_hal_exti.o"
+--library_type=microlib --strict --scatter ".\Objects\Template.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\Template.map" -o .\Objects\Template.axf

@@ -78,3 +78,4 @@
 .\objects\bsp.o: ..\..\Drivers\BSP\STM32F429-Apollo\inc\bsp_sysclk.h
 .\objects\bsp.o: ..\..\Drivers\BSP\STM32F429-Apollo\inc\bsp_led.h
 .\objects\bsp.o: ..\..\Drivers\BSP\STM32F429-Apollo\inc\bsp_tick.h
+.\objects\bsp.o: ..\..\Drivers\BSP\STM32F429-Apollo\inc\bsp_uart.h

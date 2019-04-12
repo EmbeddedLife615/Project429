@@ -78,4 +78,5 @@
 .\objects\fml_tick.o: ..\..\Drivers\BSP\STM32F429-Apollo\inc\bsp_sysclk.h
 .\objects\fml_tick.o: ..\..\Drivers\BSP\STM32F429-Apollo\inc\bsp_led.h
 .\objects\fml_tick.o: ..\..\Drivers\BSP\STM32F429-Apollo\inc\bsp_tick.h
+.\objects\fml_tick.o: ..\..\Drivers\BSP\STM32F429-Apollo\inc\bsp_uart.h
 .\objects\fml_tick.o: ..\..\FnucModules\Stm32f429-Apollo\inc\fml_tick.h

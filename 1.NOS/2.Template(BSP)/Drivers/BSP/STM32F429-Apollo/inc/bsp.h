@@ -30,17 +30,6 @@
 #ifndef _BSP_H_
 #define _BSP_H_
 
- /**
-  * @brief STM32F429 APOLLO BSP Driver version number V1.0.0
-  */
-#define __STM32F429_BSP_VERSION_MAIN   (0x01) /*!< [31:24] main version */
-#define __STM32F429_BSP_VERSION_SUB1   (0x00) /*!< [23:16] sub1 version */
-#define __STM32F429_BSP_VERSION_SUB2   (0x00) /*!< [15:8]  sub2 version */
-#define __STM32F429_BSP_VERSION_RC     (0x00) /*!< [7:0]  release candidate */ 
-#define __STM32F429_BSP_VERSION        ((__STM32F429_BSP_VERSION_MAIN << 24)\
-                                             |(__STM32F429_BSP_VERSION_SUB1 << 16)\
-                                             |(__STM32F429_BSP_VERSION_SUB2 << 8 )\
-                                             |(__STM32F429_BSP_VERSION_RC)) 
 
 /* CPU空闲时执行的函数 */
 #define CPU_IDLE()		BSP_Idle()
@@ -80,6 +69,7 @@
 #include "bsp_led.h"
 #include "bsp_tick.h"
 //#include "bsp_gpio.h"
+#include "bsp_uart.h"
 //#include "bsp_uart_fifo.h"
 //#include "bsp_timer.h"
 //#include "bsp_key.h"
@@ -147,6 +137,7 @@
 
 /* 提供给其他C文件调用的函数 */
 void BSP_Init(void);
+void BSP_PrintfLogo(void);
 void BSP_Idle(void);
 
 #endif

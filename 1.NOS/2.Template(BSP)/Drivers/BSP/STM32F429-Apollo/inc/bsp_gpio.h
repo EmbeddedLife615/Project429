@@ -14,6 +14,7 @@ typedef struct {
     GPIO_TypeDef*   port;
     uint16_t        pin;
     uint32_t   		mode;
+	uint32_t		pull;
     uint32_t        record;
 } BSP_GPIO_ConfigTypeDef;
 
@@ -23,11 +24,22 @@ typedef struct {
   */ 
 typedef enum
 { 
-  GPIO_LED0 = 0,
-  GPIO_LED1,
+	GPIO_CHANNEL0 = 0,
+	GPIO_CHANNEL1,
+	GPIO_CHANNEL2,
+	GPIO_CHANNEL3,
+	GPIO_CHANNEL4,
+	GPIO_CHANNEL5,
+	GPIO_CHANNEL6,
+	GPIO_CHANNEL7,
+	GPIO_CHANNEL8,
+	GPIO_CHANNEL9,
 }BSP_GPIO_ChannelTypeDef;
-#define IS_BSP_GPIO_LED(LED) (((LED) == GPIO_LED0) || ((LED) == GPIO_LED1) )
-#define IS_BSP_GPIO_CHANNEL(CHANNEL) (((CHANNEL) == GPIO_LED0) || ((CHANNEL) == GPIO_LED1) )
+#define IS_BSP_GPIO_CHANNEL(CHANNEL) (((CHANNEL) == GPIO_CHANNEL0) || ((CHANNEL) == GPIO_CHANNEL1)\
+										(CHANNEL) == GPIO_CHANNEL2) || ((CHANNEL) == GPIO_CHANNEL3)\
+										(CHANNEL) == GPIO_CHANNEL4) || ((CHANNEL) == GPIO_CHANNEL5)\
+										(CHANNEL) == GPIO_CHANNEL6) || ((CHANNEL) == GPIO_CHANNEL7)\
+										(CHANNEL) == GPIO_CHANNEL8) || ((CHANNEL) == GPIO_CHANNEL9))
 //|| \
 //                            ((FUNC) == GPIO_PuPd_DOWN))
 /** 
@@ -57,7 +69,7 @@ extern uint16_t input_count;
 extern uint16_t output_count;
 
 void BSP_GPIO_Init(void);
-void BSP_GPIO_SetDir(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BSP_GPIO_DirState DirState);
+int16_t BSP_GPIO_SetDir(BSP_GPIO_ChannelTypeDef ChannelNum, BSP_GPIO_DirState DirState);
 int16_t BSP_GPIO_SetValue(BSP_GPIO_ChannelTypeDef ChannelNum, BSP_GPIO_ValueState ValueState);
 int16_t BSP_GPIO_GetValue(BSP_GPIO_ChannelTypeDef ChannelNum);
 uint16_t BSP_GPIO_Count(void);

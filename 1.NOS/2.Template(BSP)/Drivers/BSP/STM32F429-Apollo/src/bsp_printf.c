@@ -1,10 +1,9 @@
 /**
   ******************************************************************************
-  * @file    app.h
+  * @file    bsp_printf.c
   * @author  Wendell
-  * @version V1.0
-  * @date    2019-2-28 
-  * @brief   Application
+  * @date    2019-3-21 
+  * @brief   functions printf need
   *          
   * Change Logs: 
   *				 Date		Author		 Notes
@@ -14,22 +13,20 @@
   ******************************************************************************
 **/
 
-#ifndef _APP_H_
-#define _APP_H_
-
-/* 定义 Function Module Layer 版本号 */
-#define __APP_VERSION		"1.0.0"
+#include "stm32f4xx.h"
+#include <stdio.h>
 
 
-#include "fml.h" 
-/* 通过取消注释或者添加注释的方式控制是否包含各函数模块 */
-#include "app_led.h"
-
-/* 提供给其他C文件调用的函数 */
-extern void APP_PrintfLogo(void);
-extern void APP_Init(void);
 
 
-#endif
+//int fgetc(FILE *f)
+//{
+//	/* 等待串口1输入数据 */
+//	while (USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET);
+
+//	return (int)USART_ReceiveData(USART1);
+//}
+
+
 
 /************************ (C) COPYRIGHT XCMG GROUP *****END OF FILE****/
